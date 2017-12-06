@@ -139,6 +139,29 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func sendPressed(_ sender: Any) {
         
         //
+        messageTextField.endEditing(true)
+        
+        messageTextField.isEnabled = false
+        sendButton.isEnabled = false
+        
+        let messageDB = Database.database().reference().child("Messages")
+        
+        let messageDictionary = ["Sender": Auth.auth().currentUser?.email,
+                                 "MessageBody": messageTextField.text!]
+        
+        messageDB.childByAutoId().setValue(messageDictionary) {
+            (error, reference) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                print("Message saved successfully!")
+                self.messageTextField.isEnabled = true
+                self.sendButton.isEnabled = true
+                self.messageTextField.text = ""
+            }
+            
+        }
         
     }
     
