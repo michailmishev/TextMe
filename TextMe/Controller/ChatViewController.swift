@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
@@ -22,6 +22,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messageTableView.delegate = self
         messageTableView.dataSource = self
+        
+        messageTextField.delegate = self
+        
+        //monitoring for tab gestures:
+        let tabGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        messageTableView.addGestureRecognizer(tabGesture)
         
         messageTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")    // nib == xib
         
@@ -60,6 +66,17 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    
+    
+    @objc func tableViewTapped() {
+        
+        messageTextField.endEditing(true)
+        
+    }
+    
+    
+    
+    
     func congigureTableViewHeight() {
         messageTableView.rowHeight = UITableViewAutomaticDimension
         messageTableView.estimatedRowHeight = 120.0
@@ -90,6 +107,30 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("Error: There was a problem signing out.")
         }
         
+        
+    }
+    
+    
+    
+    //message sender box pops-up with animation for the keyboard:
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            self.heightConstraints.constant = 258 + 50       // 258 = keyboard height
+            self.view.layoutIfNeeded()
+        })
+        
+    }
+    
+    
+    
+    //message sender box return when no keyboard:
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            self.heightConstraints.constant = 50     // 50 = send message box height
+            self.view.layoutIfNeeded()
+        })
         
     }
     
