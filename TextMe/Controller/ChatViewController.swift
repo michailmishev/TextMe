@@ -24,6 +24,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.dataSource = self
         
         messageTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")    // nib == xib
+        
+        congigureTableViewHeight()
 
     }
     
@@ -37,7 +39,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomTableViewCell
         
-        let messageArray = ["FirstMessage", "SecondMessage", "ThirdMessage", "FourthMessage"]
+        let messageArray = ["FirstMessage", "SecondMessage SecondMessageSecondMessageSecondMessage SecondMessageSecondMessage SecondMessage SecondMessageSecondMessage", "ThirdMessage", "FourthMessage"]
         
         cell.messageBody.text = messageArray[indexPath.row]
         
@@ -47,10 +49,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 4
         
+    }
+    
+    // ---------------------------------------
+    
+    
+    
+    func congigureTableViewHeight() {
+        messageTableView.rowHeight = UITableViewAutomaticDimension
+        messageTableView.estimatedRowHeight = 120.0
     }
     
     
