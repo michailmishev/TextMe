@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customMessageCell" rowHeight="82" id="9e4-xV-BzW" customClass="CustomTableViewCell" customModule="TextMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9e4-xV-BzW" id="1bV-AO-8K4">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-TE-4U7" userLabel="Avatar Image View">
+                        <rect key="frame" x="0.0" y="10" width="53" height="53"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="53" id="dyY-jb-OxH"/>
+                            <constraint firstAttribute="height" constant="53" id="oC2-Cd-jro"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lid-VO-Izn" userLabel="Background Message">
+                        <rect key="frame" x="59" y="10" width="251" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E68-sr-d5M" userLabel="Sender Username">
+                                <rect key="frame" x="9" y="0.0" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.45543920989999997" green="0.47536808250000001" blue="0.4877150059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rL-A2-6HA" userLabel="Message Body">
+                                <rect key="frame" x="9" y="19" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2rL-A2-6HA" secondAttribute="bottom" constant="20" id="872-y8-wer"/>
+                            <constraint firstItem="2rL-A2-6HA" firstAttribute="leading" secondItem="Lid-VO-Izn" secondAttribute="leading" constant="9" id="JuC-i6-8ZY"/>
+                            <constraint firstItem="E68-sr-d5M" firstAttribute="top" secondItem="Lid-VO-Izn" secondAttribute="top" id="LmA-5Q-3un"/>
+                            <constraint firstAttribute="trailing" secondItem="E68-sr-d5M" secondAttribute="trailing" constant="-2" id="R0z-9F-sGa"/>
+                            <constraint firstAttribute="trailing" secondItem="2rL-A2-6HA" secondAttribute="trailing" constant="-2" id="XfJ-SK-nQs"/>
+                            <constraint firstItem="2rL-A2-6HA" firstAttribute="top" secondItem="E68-sr-d5M" secondAttribute="bottom" constant="-2" id="h3f-0V-ztg"/>
+                            <constraint firstItem="E68-sr-d5M" firstAttribute="leading" secondItem="Lid-VO-Izn" secondAttribute="leading" constant="9" id="mxQ-U5-FcP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Tbe-TE-4U7" firstAttribute="leading" secondItem="1bV-AO-8K4" secondAttribute="leading" id="0RI-lZ-JPl"/>
+                    <constraint firstItem="Lid-VO-Izn" firstAttribute="leading" secondItem="Tbe-TE-4U7" secondAttribute="trailing" constant="6" id="TOK-Oe-fom"/>
+                    <constraint firstItem="Tbe-TE-4U7" firstAttribute="top" secondItem="1bV-AO-8K4" secondAttribute="top" constant="10" id="VNM-b1-deg"/>
+                    <constraint firstAttribute="bottom" secondItem="Lid-VO-Izn" secondAttribute="bottom" constant="10" id="diX-nI-QiD"/>
+                    <constraint firstAttribute="trailing" secondItem="Lid-VO-Izn" secondAttribute="trailing" constant="10" id="m9R-Qs-RpP"/>
+                    <constraint firstItem="Lid-VO-Izn" firstAttribute="top" secondItem="1bV-AO-8K4" secondAttribute="top" constant="10" id="ohg-Mw-Vix"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageVIew" destination="Tbe-TE-4U7" id="WbZ-Mi-s7b"/>
+                <outlet property="backgroundMessage" destination="Lid-VO-Izn" id="9LL-pe-A4x"/>
+                <outlet property="messageBody" destination="2rL-A2-6HA" id="0IQ-1w-knU"/>
+                <outlet property="senderUsername" destination="E68-sr-d5M" id="o6l-zV-xCY"/>
+            </connections>
+            <point key="canvasLocation" x="439" y="381.5"/>
+        </tableViewCell>
+    </objects>
+</document>
