@@ -221,7 +221,7 @@
             </objects>
             <point key="canvasLocation" x="679" y="-463"/>
         </scene>
-        <!--Flash Chat-->
+        <!--TextMe-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="chatVC" id="vXZ-lx-hvc" customClass="ChatViewController" customModule="TextMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -291,7 +291,7 @@
                             <constraint firstAttribute="trailing" secondItem="7eI-kw-TVm" secondAttribute="trailing" id="z26-fa-Hmy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flash Chat" id="OGj-fw-WBv">
+                    <navigationItem key="navigationItem" title="TextMe" id="OGj-fw-WBv">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="mz9-8w-6zi">
                             <connections>
                                 <action selector="logoutPressed:" destination="vXZ-lx-hvc" id="HZZ-Au-eHh"/>
