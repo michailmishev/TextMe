@@ -111,7 +111,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="registerPressed:" destination="qQg-wA-Esh" eventType="touchUpInside" id="VlE-dg-fmH"/>
+                                            <action selector="registerPressed:" destination="qQg-wA-Esh" eventType="touchUpInside" id="8cm-wu-H0I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,7 +141,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="IBw-Pb-pcT"/>
                     <connections>
+                        <outlet property="emailTextField" destination="M1R-HS-xgc" id="4Dm-G2-XLD"/>
                         <outlet property="emailTextfield" destination="M1R-HS-xgc" id="EZN-co-Khq"/>
+                        <outlet property="passwordTextField" destination="SYb-Xx-USU" id="eGm-z2-PhV"/>
                         <outlet property="passwordTextfield" destination="SYb-Xx-USU" id="pWb-Ds-G8q"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="mOy-cb-hAN"/>
                     </connections>
@@ -153,7 +155,7 @@
         <!--Log In-->
         <scene sceneID="Ku8-Lc-W7f">
             <objects>
-                <viewController storyboardIdentifier="logInVC" id="xYK-ej-9R9" customClass="LogInViewController" customModule="TextMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInVC" id="xYK-ej-9R9" customClass="LoginViewController" customModule="TextMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fxq-LK-1OE"/>
                         <viewControllerLayoutGuide type="bottom" id="G8E-r3-c8B"/>
@@ -179,6 +181,7 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPressed:" destination="xYK-ej-9R9" eventType="touchUpInside" id="Llx-K4-fZc"/>
+                                            <action selector="loginPressed:" destination="xYK-ej-9R9" eventType="touchUpInside" id="W4s-ed-Lg2"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWF-xv-G1L">
@@ -212,7 +215,9 @@
                     <navigationItem key="navigationItem" title="Log In" id="GCy-uw-FP0"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="emailTextField" destination="ZWF-xv-G1L" id="yKW-fn-dhH"/>
                         <outlet property="emailTextfield" destination="ZWF-xv-G1L" id="A9I-P9-2rL"/>
+                        <outlet property="passwordTextField" destination="zuQ-XP-4Q7" id="eFJ-6T-Ddt"/>
                         <outlet property="passwordTextfield" destination="zuQ-XP-4Q7" id="FBf-fZ-iYp"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="rRW-Qd-PQi"/>
                     </connections>
@@ -251,7 +256,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="sendPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9e5-46-aXt"/>
+                                            <action selector="sendPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jwT-iy-SUM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -294,16 +299,18 @@
                     <navigationItem key="navigationItem" title="Flash Chat" id="OGj-fw-WBv">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="mz9-8w-6zi">
                             <connections>
-                                <action selector="logOutPressed:" destination="vXZ-lx-hvc" id="AiZ-zI-Rgo"/>
+                                <action selector="logoutPressed:" destination="vXZ-lx-hvc" id="HZZ-Au-eHh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="heightConstraint" destination="dyw-Nc-T3G" id="JPk-pd-pan"/>
-                        <outlet property="messageTableView" destination="7eI-kw-TVm" id="OYq-98-NhQ"/>
+                        <outlet property="heightConstraints" destination="dyw-Nc-T3G" id="MwM-ad-lGy"/>
+                        <outlet property="messageTableView" destination="7eI-kw-TVm" id="xnm-rT-sjD"/>
+                        <outlet property="messageTextField" destination="W4K-YF-skl" id="0WY-NX-HK8"/>
                         <outlet property="messageTextfield" destination="W4K-YF-skl" id="rE7-AO-1UD"/>
-                        <outlet property="sendButton" destination="JiI-fB-I1v" id="Oxz-hw-PLC"/>
+                        <outlet property="sendButton" destination="JiI-fB-I1v" id="DDt-Nr-pJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
