@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qQg-wA-Esh" kind="push" id="DCT-Dx-168"/>
+                                    <segue destination="qQg-wA-Esh" kind="push" identifier="goToRegister" id="DCT-Dx-168"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-w2-6La">
@@ -46,7 +46,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xYK-ej-9R9" kind="push" id="b5H-GW-wfx"/>
+                                    <segue destination="xYK-ej-9R9" kind="push" identifier="goToLogin" id="b5H-GW-wfx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,9 +142,7 @@
                     <navigationItem key="navigationItem" title="Register" id="IBw-Pb-pcT"/>
                     <connections>
                         <outlet property="emailTextField" destination="M1R-HS-xgc" id="4Dm-G2-XLD"/>
-                        <outlet property="emailTextfield" destination="M1R-HS-xgc" id="EZN-co-Khq"/>
                         <outlet property="passwordTextField" destination="SYb-Xx-USU" id="eGm-z2-PhV"/>
-                        <outlet property="passwordTextfield" destination="SYb-Xx-USU" id="pWb-Ds-G8q"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="mOy-cb-hAN"/>
                     </connections>
                 </viewController>
@@ -180,7 +178,6 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="logInPressed:" destination="xYK-ej-9R9" eventType="touchUpInside" id="Llx-K4-fZc"/>
                                             <action selector="loginPressed:" destination="xYK-ej-9R9" eventType="touchUpInside" id="W4s-ed-Lg2"/>
                                         </connections>
                                     </button>
@@ -216,9 +213,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="emailTextField" destination="ZWF-xv-G1L" id="yKW-fn-dhH"/>
-                        <outlet property="emailTextfield" destination="ZWF-xv-G1L" id="A9I-P9-2rL"/>
                         <outlet property="passwordTextField" destination="zuQ-XP-4Q7" id="eFJ-6T-Ddt"/>
-                        <outlet property="passwordTextfield" destination="zuQ-XP-4Q7" id="FBf-fZ-iYp"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="goToChat" id="rRW-Qd-PQi"/>
                     </connections>
                 </viewController>
@@ -305,11 +300,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="heightConstraint" destination="dyw-Nc-T3G" id="JPk-pd-pan"/>
                         <outlet property="heightConstraints" destination="dyw-Nc-T3G" id="MwM-ad-lGy"/>
                         <outlet property="messageTableView" destination="7eI-kw-TVm" id="xnm-rT-sjD"/>
                         <outlet property="messageTextField" destination="W4K-YF-skl" id="0WY-NX-HK8"/>
-                        <outlet property="messageTextfield" destination="W4K-YF-skl" id="rE7-AO-1UD"/>
                         <outlet property="sendButton" destination="JiI-fB-I1v" id="DDt-Nr-pJc"/>
                     </connections>
                 </viewController>
@@ -339,6 +332,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mOy-cb-hAN"/>
+        <segue reference="rRW-Qd-PQi"/>
     </inferredMetricsTieBreakers>
 </document>
