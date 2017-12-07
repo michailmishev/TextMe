@@ -141,7 +141,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //message sender box pops-up with animation for the keyboard:
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.heightConstraints.constant = 258 + 50       // 258 = keyboard height
             self.view.layoutIfNeeded()
         })
@@ -153,7 +153,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //message sender box return when no keyboard:
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        UIView.animate(withDuration: 0.6, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.heightConstraints.constant = 50     // 50 = send message box height
             self.view.layoutIfNeeded()
         })
